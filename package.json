@@ -1,15 +1,22 @@
 {
   "name": "card-triage",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "app",
+    "server"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "api": "node ./server/index.js"
+    "start:app": "yarn workspace app start",
+    "start:api": "yarn workspace api start",
+    "start:all": "lerna run start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.16.1"
+    "lerna": "^6.0.1"
   }
 }
